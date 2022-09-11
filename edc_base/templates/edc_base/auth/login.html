@@ -39,7 +39,8 @@
               {% endif %}
 
               <div class="card-body">
-                <form method="post" action="{{ app_path }}" role="form">
+                {% url 'login' as login_url %}
+                <form method="post" action="{{ login_url }}" role="form">
                     {% csrf_token %}
                   <label>{% translate 'Username' %}</label>
                   <div class="mb-3">
