@@ -16,17 +16,15 @@
               <div class="card-body">
                 {% if next %}
                     {% if user.is_authenticated %}
-                    <p>Your account doesn't have access to this page. To proceed,
+                    <p class='text-danger'>Your account doesn't have access to this page. To proceed,
                     please login with an account that has access.</p>
                     {% endif %}
                 {% endif %}
                 {% if form.errors %}
-    		    {% for key, value in form.errors.items %}
-    		      <p>
-    		    	{{ key |striptags }}: {{ value |striptags }}
-                  </p>
-    		    {% endfor %}
-    		{% endif %}
+                    {% for key, value in form.errors.items %}
+                      <p class='text-danger'>{{ key |striptags }}: {{ value |striptags }}</p>
+                    {% endfor %}
+                {% endif %}
                 <form method="post" action="{% url 'login' %}" role="form">
                     {% csrf_token %}
                   <label>{{ form.username.label_tag }}</label>
@@ -55,12 +53,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-6">
-            <div class="oblique position-absolute top-0 h-100 d-md-block d-none me-n8">
-              <div class="oblique-image bg-cover position-absolute fixed-top ms-auto h-100 z-index-0 ms-n6" 
-              style="background-image:url('{% static 'edc_base/img/curved6.jpg' %}')"></div>
-            </div>
-          </div>
+          {% include 'edc_base/auth/cover_image.html' %}
         </div>
       </div>
     </div>
