@@ -7,7 +7,7 @@ from django.conf import settings
 
 class HomeView(EdcBaseViewMixin, TemplateView):
 
-    template_name = 'edc_base/auth/login.html'
+    template_name = 'edc_base/home.html'
     navbar_name = 'edc_base'
     navbar_selected_item = 'edc_base'
 
@@ -19,3 +19,7 @@ class HomeView(EdcBaseViewMixin, TemplateView):
             third_party_packages=third_party_packages,
             installed_apps=settings.INSTALLED_APPS)
         return context
+
+    @method_decorator(login_required)
+    def dispatch(self, *args, **kwargs):
+        return super().dispatch(*args, **kwargs)

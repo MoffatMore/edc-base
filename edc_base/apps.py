@@ -27,7 +27,7 @@ class AppConfig(DjangoAppConfig):
     name = 'edc_base'
     verbose_name = 'Edc Base'
     institution = 'Institution (see edc_base.AppConfig.institution)'
-    system_name = 'Base System (see edc_base.AppConfig.project_name)'
+    system_name = 'System name (see edc_base.AppConfig.project_name)'
     physical_address = Address()
     postal_address = Address()
     disclaimer = 'For commercial use only.'
