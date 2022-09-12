@@ -22,5 +22,5 @@ app_name = 'edc_base'
 urlpatterns = [
     path('', HomeView.as_view()),
     path('admin/', admin.site.urls),
-    path('accounts/', include('edc_base.auth.urls')),
+    path('accounts/', include('edc_base.accounts.urls')),
 ]

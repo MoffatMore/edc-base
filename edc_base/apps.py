@@ -26,8 +26,8 @@ def activate_foreign_keys(sender, connection, **kwargs):
 class AppConfig(DjangoAppConfig):
     name = 'edc_base'
     verbose_name = 'Edc Base'
-    institution = 'Institution (see edc_base.AppConfig.institution)'
-    system_name = 'System name (see edc_base.AppConfig.project_name)'
+    institution = 'Pixel Softwares'
+    system_name = 'Pixel Softwares'
     physical_address = Address()
     postal_address = Address()
     disclaimer = 'For commercial use only.'

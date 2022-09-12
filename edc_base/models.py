@@ -1,1 +1,1 @@
-from .auth.models import UserProfile
+from .accounts.models import UserProfile
