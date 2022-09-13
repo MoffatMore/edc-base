@@ -1,4 +1,2 @@
-django-revision
-arrow
-python-dateutil
-pytz
+
+
