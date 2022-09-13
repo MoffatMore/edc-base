@@ -120,9 +120,13 @@
             </ul>
           </li>
           <li class="nav-item px-3 d-flex align-items-center">
-            <a href="javascript:;" class="nav-link text-body p-0">
-              <i class="fa fa-sign-out-alt fixed-plugin-button-nav cursor-pointer"></i>
-            </a>
+            <form id="logout-form" method="post" action="{% url 'admin:logout' %}">
+              {% csrf_token %}
+              <a href="#logout-form" class="nav-link text-body p-0">
+                <i class="fa fa-sign-out-alt fixed-plugin-button-nav cursor-pointer"></i>
+              </a>
+          </form>
+          
           </li>
         
         </ul>

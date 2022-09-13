@@ -20,7 +20,7 @@ from .views import HomeView
 app_name = 'edc_base'
 
 urlpatterns = [
-    path('', HomeView.as_view()),
+    path('', HomeView.as_view(), name='home'),
     path('admin/', admin.site.urls),
     path('accounts/', include('edc_base.accounts.urls')),
 ]
