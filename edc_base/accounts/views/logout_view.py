@@ -4,7 +4,7 @@ from django.contrib.auth.views import LogoutView as BaseLogoutView
 
 class LogoutView(BaseLogoutView):
 
-    next_page = 'login'
+    next = 'login_url'
 
     @property
     def extra_context(self):

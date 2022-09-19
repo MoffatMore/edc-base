@@ -1,12 +1,20 @@
 {% block messages %}
     {% if messages %}
-        <div class="alert alert-danger d-flex alert-dismissible fade show align-items-center w-20" role="alert">
-            <i class="bi bi-exclamation-triangle-fill"></i>
+    <div class='container'>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
             {% for message in messages %}
-            <span {% if message.tags %} class="{{ message.tags }} text-center pt-0 px-lg-2 px-1"{% endif %}>{{ message|capfirst }}</span>
-            </br>
+                <span class="alert-icon"><i class="fas fa-exclamation-triangle"></i></span>
+                <span
+                    {% if message.tags %} class="{{ message.tags }}"
+                    {% else %} class="alert-text"
+                    {% endif %} >
+                <strong>Warning!</strong> {{ message|capfirst }}</span>
+                </br>
             {% endfor %}
-            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
         </div>
+    </div>
     {% endif %}
 {% endblock messages %}

@@ -5,9 +5,9 @@ from .forms import EmailValidationForm
 
 
 urlpatterns = [
-    path('login/', LoginView.as_view(), name='login'),
+    path('login/', LoginView.as_view(), name='login_url'),
     path('logout/', LogoutView.as_view(
-        template_name='edc_base/accounts/login.html'), name='logout'),
+        template_name='edc_base/accounts/login.html'), name='logout_url'),
     path('change-password/',
          auth_views.PasswordChangeView.as_view(
             template_name='edc_base/accounts/password_reset_change.html',
