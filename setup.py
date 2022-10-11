@@ -30,6 +30,7 @@ setup(
         'django-extensions',
         'django-revision',
         'python-dateutil',
+        'edc-constants',
         'docutils',
         'model_mommy',
         'Faker',

@@ -1,0 +1,34 @@
+{% extends base_template_name %}
+
+{% block content %}
+
+<div class="container-fluid">
+
+  <div class="card">
+    <div class="card-header p-0 mx-3 mt-3 position-relative z-index-1">
+      <div class="col-md-12">
+        <div class="jumbotron text-center">
+          <h2>Administration</h2>
+        </div>
+      </div>
+    </div>
+  
+    <div class="card-body pt-2">
+      <a href="javascript:;" class="card-title h5 d-block text-darker">
+       Clients Records
+      </a>
+      <p class="card-description mb-4">
+        Click any of the files below link to manage clients records
+      </p>
+      <ul class="list-group mb-4">
+        {% for name, url_name in col_one.items %}
+        <li class="list-group-item">
+          <a  href="{% url url_name|default:'home_url' %}" class="text-primary">{{ name }}</a>
+        </li>
+      {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock content %}

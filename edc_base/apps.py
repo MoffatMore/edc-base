@@ -33,10 +33,10 @@ class AppConfig(DjangoAppConfig):
     disclaimer = 'For commercial use only.'
     default_url_name = 'home_url'
     copyright = f'2022-{get_utcnow().year}'
-    license = 'MIT LICENSE Version 3'
+    license = 'MIT LICENCE Version 1'
 
     def ready(self):
-        from .signals import update_user_profile_on_post_save
+        from .signals import update_user_profile_on_post_save  # NOQA
         register(edc_base_check)
         sys.stdout.write(f'Loading {self.verbose_name} ...\n')
         connection_created.connect(activate_foreign_keys)

@@ -14,9 +14,49 @@ DATE_ESTIMATED = (
 )
 
 IDENTITY_TYPE = (
-    ('OMANG', 'Omang'),
-    ('DRIVERS', 'Driver\'s License'),
-    ('PASSPORT', 'Passport'),
-    ('OMANG_RCPT', 'Omang Receipt'),
-    ('OTHER', 'Other'),
+    ('omang', 'Omang'),
+    ('drivers', 'Driver\'s License'),
+    ('passport', 'Passport'),
+    ('pamng_receipt', 'Omang Receipt'),
+    ('other', 'Other'),
+)
+
+GENDER = (
+    ('male', 'Male'),
+    ('female', 'Female')
+)
+
+ACCOUNT_TYPE = [
+
+]
+
+PREFERRED_CONTACT = [
+    ('cell', 'Cell'),
+    ('tel', 'Tel'),
+    ('email', 'Email'),
+    ('fax', 'Fax'),
+]
+
+PREFERRED_INVOICE = [
+    ('contact', 'Contact'),
+    ('email', 'Email'),
+    ('postal_address', 'Postal Address'),
+]
+
+YES_NO = (
+    ('yes', 'Yes'),
+    ('no', 'No')
+)
+
+MARITAL_STATUS = (
+    ('single', 'Single'),
+    ('married', 'Married'),
+    ('divorced', 'Divorced'),
+    ('widowed', 'Widowed')
+)
+
+TITLE = (
+    ('Mr', 'Mr'),
+    ('Mrs', 'Mrs'),
+    ('Miss', 'Miss')
 )
