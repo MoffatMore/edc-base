@@ -85,5 +85,4 @@ class AdministrationViewMixin(ContextMixin):
         sections.update(**self.default_sections)
         keys = list(sections.keys())
         keys.sort()
-        print(keys)
         return {key: sections.get(key) for key in keys}

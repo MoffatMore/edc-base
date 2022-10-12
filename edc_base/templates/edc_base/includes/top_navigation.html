@@ -1,0 +1,67 @@
+{% load i18n static %}
+<div class="container-fluid position-sticky z-index-sticky top-0 mb-1">
+    {% if request.site.name|title == 'Example.Com' %}
+      <nav class="navbar navbar-light navbar-expand-lg bg-white px-0 blur top-0  z-index-3 shadow-none border-raduis-xl my-2 py-2 start-0 end-0 mx-0">
+    {% else %}
+      <nav class="navbar navbar-dark navbar-expand-lg bg-gradient-dark px-0 blur top-0  z-index-3 shadow-none border-raduis-xl my-2 py-2 start-0 end-0 mx-0">
+    {% endif %}
+        <div class="container-fluid py-1 px-3">
+          <nav aria-label="breadcrumb">
+            {% block topbar_title %}
+              <span class="font-weight-bolder {% if not request.site.name|title == 'Example.Com' %} text-white {% endif %} mb-0 me-3">
+                {{ system_name }}
+              </span>
+              <span class="font-weight-bolder {% if not request.site.name|title == 'Example.Com' %} text-light {% endif %} me-3" >
+                {{ request.site.name|title }}
+                {% if live_system %} 
+                  <i class="fa fa-fire fa-fw"></i>
+                {% else %} 
+                  Test 
+                {% endif %}
+              </span>
+            {% endblock topbar_title %}
+            <ol class="breadcrumb bg-transparent mb-0 pb-0 pt-1 px-0 me-sm-6 me-5">
+              <li class="breadcrumb-item text-sm"><a class="opacity-5 {% if not request.site.name|title == 'Example.Com' %} text-light {% endif %}" href="{{ home_url }}">
+                Home</a>
+              </li>
+              <li class="breadcrumb-item text-sm active" aria-current="page">
+                {{ navbar_selected|title }}
+              </li>
+            </ol>
+          </nav>
+          
+          <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-6" id="navbar">
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+              <div class="border-radius-lg d-flex me-2">
+              </div>
+            </div>
+            <ul class="navbar-nav  justify-content-end">
+              {% block topbar_navbar_apps %}
+                  {% for rendered_item in navbar.rendered_items %}
+                      {{ rendered_item }}
+                  {% endfor %}
+
+                  {% for rendered_item in default_navbar.rendered_items %}
+                      {{ rendered_item }}
+                  {% endfor %}
+              {% endblock topbar_navbar_apps %}
+              <li class="nav-item px-3 d-flex align-items-center">
+                <a href="{% url 'admin:auth_user_change' user.id %}" class="nav-link p-0 {% if not request.site.name|title == 'Example.Com' %} text-white {% endif %}">
+                  {{ user.username }}
+                </a>
+              </li>
+            
+              <li class="nav-item d-xl-none ps-3 d-flex align-items-center">
+                <a href="javascript:;" class="nav-link text-body p-0" id="iconNavbarSidenav">
+                  <div class="sidenav-toggler-inner">
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                    <i class="sidenav-toggler-line"></i>
+                  </div>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+</div>

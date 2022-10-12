@@ -36,15 +36,18 @@
   {% block sidenavbar %}
   {% endblock sidenavbar %}
 
+  {% block topnavbar %}
+    {% include "edc_base/includes/top_navigation.html" %} 
+  {% endblock topnavbar %}
+
   <main class="main-content position-relative max-height-vh-100 h-100 border-radius-lg">
-
-    {% block topnavbar %}{% endblock topnavbar %}
-
     {% block alert %}
       {% include "edc_base/includes/alert_messages.html" %}
     {% endblock alert %}
 
-    {% block content %}{% endblock content %}
+    {% block content %}
+    
+    {% endblock content %}
 
   </main>
 
