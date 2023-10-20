@@ -15,7 +15,6 @@ class AdministrationViewMixin(ContextMixin):
         context.update(base_template_name=self.base_template_name)
 
         sections = self.sections
-        print(sections)
         context.update(sections=sections)
         index = 0
         col_one = {}
@@ -51,16 +50,18 @@ class AdministrationViewMixin(ContextMixin):
             url_namespace = app_config.url_namespace
         except AttributeError:
             url_namespace = app_config.name
+            print(url_namespace)
         try:
             url = app_config.home_url_name
         except AttributeError:
             url = f'{url_namespace}:home_url'
+            print(url)
         try:
             reverse(url)
         except NoReverseMatch:
             # probably is not a registered namespace
-            print('probably is not a registered namespace')
-            pass
+            print(url)
+            print(f'probably is not a registered namespace {url}')
         else:
             section = {app_config.verbose_name: url}
         return section
@@ -76,13 +77,18 @@ class AdministrationViewMixin(ContextMixin):
         """
         sections = {}
         for app_config in django_apps.get_app_configs():
+            print(app_config)
             try:
                 include = app_config.include_in_administration_section
             except AttributeError:
                 include = True
+            print(f'include app_config {app_config} = {include}')
             if include:
                 sections.update(**self.get_section(app_config))
+                print(sections)
         sections.update(**self.default_sections)
         keys = list(sections.keys())
         keys.sort()
+        print(keys)
+        print(sections)
         return {key: sections.get(key) for key in keys}

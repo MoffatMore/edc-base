@@ -15,8 +15,8 @@
                 {{ request.site.name|title }}
                 {% if live_system %} 
                   <i class="fa fa-fire fa-fw"></i>
-                {% else %} 
-                  Test 
+                {% else %}
+                  Test
                 {% endif %}
               </span>
             {% endblock topbar_title %}
@@ -31,11 +31,11 @@
           </nav>
           
           <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-6" id="navbar">
-            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4" id="navbar">
+            <div class="collapse navbar-collapse mt-sm-0 mt-2 me-md-0 me-sm-4">
               <div class="border-radius-lg d-flex me-2">
               </div>
             </div>
-            <ul class="navbar-nav  justify-content-end">
+            <ul class="navbar-nav  justify-content-right">
               {% block topbar_navbar_apps %}
                   {% for rendered_item in navbar.rendered_items %}
                       {{ rendered_item }}

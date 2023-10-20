@@ -1,5 +1,5 @@
 """
-WSGI config for sebego_efilling project.
+WSGI config for efilling_efilling project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 

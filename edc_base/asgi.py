@@ -1,5 +1,5 @@
 """
-ASGI config for sebego_efilling project.
+ASGI config for efilling_efilling project.
 
 It exposes the ASGI callable as a module-level variable named ``application``.
 
