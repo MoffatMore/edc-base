@@ -1,3 +1,4 @@
+''' choices '''
 
 DATE_ESTIMATED_NA = (
     ('not_estimated', 'No.'),
@@ -46,6 +47,12 @@ PREFERRED_INVOICE = [
 YES_NO = (
     ('yes', 'Yes'),
     ('no', 'No')
+)
+
+YES_NO_NA = (
+    ('yes', 'Yes'),
+    ('no', 'No'),
+    ('na', 'N/A')
 )
 
 MARITAL_STATUS = (

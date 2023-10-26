@@ -50,17 +50,13 @@ class AdministrationViewMixin(ContextMixin):
             url_namespace = app_config.url_namespace
         except AttributeError:
             url_namespace = app_config.name
-            print(url_namespace)
         try:
             url = app_config.home_url_name
         except AttributeError:
-            url = f'{url_namespace}:home_url'
-            print(url)
+            url = f'{url_namespace}:index'
         try:
             reverse(url)
         except NoReverseMatch:
-            # probably is not a registered namespace
-            print(url)
             print(f'probably is not a registered namespace {url}')
         else:
             section = {app_config.verbose_name: url}
